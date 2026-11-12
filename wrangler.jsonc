@@ -1,0 +1,11 @@
+// Cloudflare Workers: serves the static site from the "out" folder
+// (created by `npm run build`). No server code needed.
+{
+  "name": "einbuergerungstest",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
