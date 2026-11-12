@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { generalQuestions, getQuestion, getState, KEYS, questionLabel, questionsForState, type Question } from "@/lib/data";
+import { generalQuestions, getQuestion, getState, KEYS, questionsForState, type Question } from "@/lib/data";
 import { addExam, recordAnswer, useHydrated, useProgress } from "@/lib/progress";
 import { BASE, EXAM } from "@/lib/site";
 import { Icon } from "./Icon";
@@ -271,7 +271,7 @@ function ExamResult({ result, onRestart }: { result: Result; onRestart: () => vo
   const generalRight = qs.filter((q, i) => q.t === "g" && result.answers[i] === q.a).length;
   const stateRight = right - generalRight;
   const passed = right >= EXAM.passAt;
-  const wrong = qs.map((q, i) => ({ q, a: result.answers[i] })).filter((x) => x.a !== x.q.a);
+  const wrong = qs.map((q, i) => ({ q, a: result.answers[i], pos: i + 1 })).filter((x) => x.a !== x.q.a);
   const C = 2 * Math.PI * 52;
 
   return (
@@ -309,10 +309,10 @@ function ExamResult({ result, onRestart }: { result: Result; onRestart: () => vo
       {wrong.length ? (
         <section className="flex flex-col gap-2">
           <h2 className="font-display text-lg font-bold">{wrong.length} {wrong.length === 1 ? "Fehler" : "Fehler"}</h2>
-          {wrong.map(({ q, a }) => (
+          {wrong.map(({ q, a, pos }) => (
             <details key={q.id} className="bg-white rounded-xl">
               <summary className="cursor-pointer list-none flex gap-2.5 items-center px-3 min-h-12 py-2">
-                <span className="text-xs font-bold text-flag-red-dark bg-err-bg px-1.5 py-1 rounded-md shrink-0">{questionLabel(q)}</span>
+                <span className="text-xs font-bold text-flag-red-dark bg-err-bg px-1.5 py-1 rounded-md shrink-0">Frage {pos}</span>
                 <span className="text-[13px] leading-snug line-clamp-1">{q.q}</span>
               </summary>
               <div className="px-3 pb-3 flex flex-col gap-1.5 text-sm">
