@@ -4,7 +4,7 @@ import { GENERAL_COUNT, questions } from "@/lib/data";
 import { BASE, EXAM } from "@/lib/site";
 
 export const metadata = {
-  title: { absolute: "Einbürgerungstest 2026 – alle Fragen nach Themen üben | Wains Vlogs" },
+  title: { absolute: "Einbürgerungstest – alle Fragen nach Themen üben | Wains Vlogs" },
   alternates: { canonical: `${BASE}/` },
 };
 
@@ -14,7 +14,7 @@ export default function Home() {
     <div className="mx-auto max-w-6xl px-4 md:px-6 pt-5 md:pt-10 pb-24 md:pb-10 flex flex-col gap-8 md:gap-12">
       <section className="flex flex-wrap gap-6 md:gap-8 items-start">
         <div className="flex-[999_1_480px] min-w-0 flex flex-col gap-4">
-          <span className="self-start bg-gold-soft text-[13px] font-bold px-3 py-1.5 rounded-full">Leben in Deutschland · Fragenkatalog 2026</span>
+          <span className="self-start bg-gold-soft text-[13px] font-bold px-3 py-1.5 rounded-full">Leben in Deutschland · Offizieller Fragenkatalog</span>
           <h1 className="font-display text-[30px] md:text-5xl leading-[1.08] tracking-[-0.5px] md:tracking-[-1px] font-bold">
             Einbürgerungstest bestehen – Thema für Thema.
           </h1>

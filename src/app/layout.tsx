@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Einbürgerungstest 2026 – alle Fragen üben | Wains Vlogs",
+    default: "Einbürgerungstest – alle Fragen üben | Wains Vlogs",
     template: "%s | Einbürgerungstest · Wains Vlogs",
   },
   description:
